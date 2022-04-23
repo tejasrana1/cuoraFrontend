@@ -1,5 +1,35 @@
 .App {
+  background-color: #191919;
+  color: oldlace;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  justify-content: stretch;
+}
+.NavBar {
+  font-family: "Montserrat", sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+.active {
+  background-color: #2666cf;
+}
+.NavBar a {
+  display: block;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.navLink {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  transition: 700ms;
+  border-radius: 40px;
 }
 
 .App-logo {
@@ -12,6 +42,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
+
 
 .App-header {
   background-color: #282c34;
