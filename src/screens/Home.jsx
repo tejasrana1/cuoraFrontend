@@ -9,18 +9,7 @@ const Home = (props) => {
   //   console.log(socket.id);
   // });
   var navigate = useNavigate();
-  const [user, setUser] = useState({ name: "" });
-  useEffect(() => {
-    $.post("http://localhost:4000/user", {
-      user: localStorage.getItem("cuoraId"),
-    })
-      .done((res) => {
-        setUser(res.data);
-      })
-      .fail((e) => {
-        console.log(e);
-      });
-  }, []);
+  
   function logout(e) {
     e.preventDefault();
     props.loggedIn(false);
@@ -29,10 +18,13 @@ const Home = (props) => {
   }
   return (
     <div>
-      <h1>Welcome {user.name}</h1>
+      <h1>Welcome {props.user.name}</h1>
       <button onClick={logout}>logout</button>
       <button>
         <Link to="/createN">Create Namespace</Link>
+      </button>
+      <button>
+        <Link to="/details">Details</Link>
       </button>
     </div>
   );

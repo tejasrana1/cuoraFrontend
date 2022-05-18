@@ -8,6 +8,7 @@ function Register() {
     email: localStorage.getItem("cuoraOtp"),
     address: "",
     uid: "",
+    permission: "student",
     password: "",
     cpass: "",
   });
@@ -39,6 +40,13 @@ function Register() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(info);
+    // if (info.email.startsWith())
+    // setInfo(prev=>{
+    //   return {
+    //     ...prev,
+    //     permission: "moderator"
+    //   }
+    // })
     if (info.cpass === info.password)
       $.post("http://localhost:4000/register", {
         info,
